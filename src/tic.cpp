@@ -9,7 +9,7 @@
 #include <Fl/Fl_Widget.H>
 #include <Fl/fl_ask.H>
 
-#include "ui/main.h"
+#include "main.fl.h"
 
 #include "strings.h"
 #include "minimax.h"
