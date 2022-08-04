@@ -14,11 +14,6 @@ namespace strings
     inline constexpr char BUTTON_START[] = "Start game";
     inline constexpr char BUTTON_RESTART[] = "Restart";
 
-    inline constexpr char MENU_DIFF_EASY[] = "Easy";
-    inline constexpr char MENU_DIFF_MEDIUM[] = "Medium";
-    inline constexpr char MENU_DIFF_HARD[] = "Hard";
-    inline constexpr char MENU_DIFF_UNBEATABLE[] = "Unbeatable";
-
     inline constexpr char EXCEPT_AI_FAIL[] = "Minmax failed";
     inline constexpr char EXCEPT_CANCEL[] = "Operation cancelled";
 };

@@ -1,7 +1,9 @@
-**/.vscode/
-
 obj/
+obj_dbg/
 bin/
+bin_dbg/
 
-ui/__inc__/
-ui/__obj__/
+view/__inc__/
+view/__src__/
+view/__obj__/
+view/__obj_dbg__/

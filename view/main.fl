@@ -1,0 +1,126 @@
+# data file for the Fltk User Interface Designer (fluid)
+version 1.0308
+header_name {.h}
+code_name {.cxx}
+widget_class MainWindowView {
+  label Tic open
+  xywh {296 99 235 390} type Double
+  class Fl_Double_Window visible
+} {
+  decl {virtual void tilePressCb(Fl_Widget *, long) {}} {protected local
+  }
+  decl {virtual void turnSelectionCb(Fl_Widget *, long) {}} {protected local
+  }
+  decl {virtual void diffChoiceCb(Fl_Widget *, long) {}} {protected local
+  }
+  decl {virtual void startButtonCb(Fl_Widget *, void *) {}} {protected local
+  }
+  decl {enum Player {Human, PC};} {protected local
+  }
+  decl {enum Difficulty {Easy, Medium, Hard, Unbeatable};} {protected local
+  }
+  Fl_Box turnLabel {
+    xywh {5 5 225 20} labelfont 1
+  }
+  Fl_Group {} {
+    xywh {5 25 225 225} box SHADOW_BOX color 53
+  } {
+    Fl_Box {} {
+      xywh {80 34 3 201} box EMBOSSED_BOX color 41
+    }
+    Fl_Box {} {
+      xywh {149 34 3 201} box EMBOSSED_BOX color 41
+    }
+    Fl_Box {} {
+      xywh {15 99 201 3} box EMBOSSED_BOX color 41
+    }
+    Fl_Box {} {
+      xywh {15 168 201 3} box EMBOSSED_BOX color 41
+    }
+    Fl_Group tilesGroup {
+      xywh {15 34 202 202}
+    } {
+      Fl_Button {} {
+        xywh {15 35 64 64} box NO_BOX labelsize 50
+      }
+      Fl_Button {} {
+        xywh {84 35 64 64} box NO_BOX labelsize 50
+      }
+      Fl_Button {} {
+        xywh {153 35 64 64} box NO_BOX labelsize 50
+      }
+      Fl_Button {} {
+        xywh {16 103 64 64} box NO_BOX labelsize 50
+      }
+      Fl_Button {} {
+        xywh {84 103 64 64} box NO_BOX labelsize 50
+      }
+      Fl_Button {} {
+        xywh {153 103 64 64} box NO_BOX labelsize 50
+      }
+      Fl_Button {} {
+        xywh {15 172 64 64} box NO_BOX labelsize 50
+      }
+      Fl_Button {} {
+        xywh {84 172 64 64} box NO_BOX labelsize 50
+      }
+      Fl_Button {} {
+        xywh {153 172 64 64} box NO_BOX labelsize 50
+      }
+    }
+  }
+  Fl_Group playerGroup {
+    label {Who starts?} open
+    xywh {5 274 225 38} box ENGRAVED_FRAME
+  } {
+    Fl_Round_Button {} {
+      label You
+      user_data {Player::Human} user_data_type long
+      callback {turnSelectionCb(o, v);}
+      xywh {15 283 100 20} down_box ROUND_DOWN_BOX align 16
+      code0 {o->type(FL_RADIO_BUTTON);}
+      code1 {o->set();}
+    }
+    Fl_Round_Button {} {
+      label Computer
+      user_data {Player::PC} user_data_type long
+      callback {turnSelectionCb(o, v);} selected
+      xywh {120 283 100 20} down_box ROUND_DOWN_BOX align 16
+      code0 {o->type(FL_RADIO_BUTTON);}
+    }
+  }
+  Fl_Choice diffChoice {
+    label {Difficulty:} open
+    xywh {73 320 157 25} down_box BORDER_BOX
+  } {
+    MenuItem {} {
+      label Easy
+      user_data {Difficulty::Easy} user_data_type long
+      callback {diffChoiceCb(o, v);}
+      xywh {0 0 34 24}
+    }
+    MenuItem {} {
+      label Medium
+      user_data {Difficulty::Medium} user_data_type long
+      callback {diffChoiceCb(o, v);}
+      xywh {0 0 34 24}
+    }
+    MenuItem {} {
+      label Hard
+      user_data {Difficulty::Hard} user_data_type long
+      callback {diffChoiceCb(o, v);}
+      xywh {0 0 34 24}
+    }
+    MenuItem {} {
+      label Unbeatable
+      user_data {Difficulty::Unbeatable} user_data_type long
+      callback {diffChoiceCb(o, v);}
+      xywh {0 0 34 24}
+    }
+  }
+  Fl_Button startButton {
+    label {Start game}
+    callback {startButtonCb(o, v);}
+    xywh {5 352 225 30}
+  }
+}
